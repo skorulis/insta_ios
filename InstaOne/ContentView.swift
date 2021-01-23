@@ -15,7 +15,6 @@ class SearchViewModel: ObservableObject {
     var projection: ObservableViewModel<ViewAction, ViewState>
     private let api = MainAPI()
     private var subscibers: Set<AnyCancellable> = []
-    @Published var users: [InstaUser] = []
     
     @Published var query: String = "" {
         didSet {
@@ -23,7 +22,6 @@ class SearchViewModel: ObservableObject {
             api.execute(req).sink { x in
                 print("Finished \(x)")
             } receiveValue: { (users) in
-                self.users = users
                 self.projection.dispatch(.gotUsers(users))
             }.store(in: &subscibers)
         }
@@ -58,6 +56,7 @@ class SearchViewModel: ObservableObject {
     
 }
 
+
 struct UserRow: View {
     
     private let user: InstaUser
@@ -78,16 +77,19 @@ struct UserRow: View {
 struct ContentView: View {
     
     @ObservedObject private var viewModel: SearchViewModel
+    @ObservedObject private var reduxProjection: ObservableViewModel<SearchViewModel.ViewAction, SearchViewModel.ViewState>
     
     init(store: AppStore) {
-        self.viewModel = SearchViewModel(store: store)
+        let vm = SearchViewModel(store: store)
+        self.viewModel = vm
+        reduxProjection = vm.projection;
     }
     
     var body: some View {
         List  {
             Section  {
                 SearchBar(text: $viewModel.query)
-                ForEach(viewModel.users) { (user) in
+                ForEach(reduxProjection.state.users) { (user) in
                     UserRow(user: user)
                 }
             }
