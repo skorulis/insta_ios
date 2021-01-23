@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,10 @@
 		FA4B3B5A25BBD6220013B3ED /* InstaOneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B5925BBD6220013B3ED /* InstaOneTests.swift */; };
 		FA4B3B6525BBD6220013B3ED /* InstaOneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B6425BBD6220013B3ED /* InstaOneUITests.swift */; };
 		FA4B3B7A25BBD7A60013B3ED /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B7925BBD7A60013B3ED /* SearchBar.swift */; };
+		FA4B3B8425BBDD260013B3ED /* ASNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = FA4B3B8325BBDD260013B3ED /* ASNetworking */; };
+		FA4B3B8925BBDD320013B3ED /* MainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B8825BBDD320013B3ED /* MainAPI.swift */; };
+		FA4B3B8E25BBE01B0013B3ED /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B8D25BBE01B0013B3ED /* Endpoints.swift */; };
+		FA4B3B9425BBE0690013B3ED /* InstaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B9325BBE0690013B3ED /* InstaUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,9 @@
 		FA4B3B6425BBD6220013B3ED /* InstaOneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaOneUITests.swift; sourceTree = "<group>"; };
 		FA4B3B6625BBD6220013B3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA4B3B7925BBD7A60013B3ED /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		FA4B3B8825BBDD320013B3ED /* MainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPI.swift; sourceTree = "<group>"; };
+		FA4B3B8D25BBE01B0013B3ED /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		FA4B3B9325BBE0690013B3ED /* InstaUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4B3B8425BBDD260013B3ED /* ASNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +109,8 @@
 		FA4B3B4125BBD6200013B3ED /* InstaOne */ = {
 			isa = PBXGroup;
 			children = (
+				FA4B3B9225BBE05D0013B3ED /* model */,
+				FA4B3B8125BBD90E0013B3ED /* api */,
 				FA4B3B7825BBD79D0013B3ED /* Components */,
 				FA4B3B4225BBD6200013B3ED /* AppDelegate.swift */,
 				FA4B3B4425BBD6200013B3ED /* SceneDelegate.swift */,
@@ -147,6 +157,23 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		FA4B3B8125BBD90E0013B3ED /* api */ = {
+			isa = PBXGroup;
+			children = (
+				FA4B3B8825BBDD320013B3ED /* MainAPI.swift */,
+				FA4B3B8D25BBE01B0013B3ED /* Endpoints.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		FA4B3B9225BBE05D0013B3ED /* model */ = {
+			isa = PBXGroup;
+			children = (
+				FA4B3B9325BBE0690013B3ED /* InstaUser.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,6 +190,9 @@
 			dependencies = (
 			);
 			name = InstaOne;
+			packageProductDependencies = (
+				FA4B3B8325BBDD260013B3ED /* ASNetworking */,
+			);
 			productName = InstaOne;
 			productReference = FA4B3B3F25BBD6200013B3ED /* InstaOne.app */;
 			productType = "com.apple.product-type.application";
@@ -234,6 +264,9 @@
 				Base,
 			);
 			mainGroup = FA4B3B3625BBD6200013B3ED;
+			packageReferences = (
+				FA4B3B8225BBDD260013B3ED /* XCRemoteSwiftPackageReference "ASNetworking" */,
+			);
 			productRefGroup = FA4B3B4025BBD6200013B3ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -277,9 +310,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4B3B9425BBE0690013B3ED /* InstaUser.swift in Sources */,
 				FA4B3B4325BBD6200013B3ED /* AppDelegate.swift in Sources */,
 				FA4B3B7A25BBD7A60013B3ED /* SearchBar.swift in Sources */,
 				FA4B3B4525BBD6200013B3ED /* SceneDelegate.swift in Sources */,
+				FA4B3B8925BBDD320013B3ED /* MainAPI.swift in Sources */,
+				FA4B3B8E25BBE01B0013B3ED /* Endpoints.swift in Sources */,
 				FA4B3B4725BBD6200013B3ED /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +645,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA4B3B8225BBDD260013B3ED /* XCRemoteSwiftPackageReference "ASNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:skorulis/ASNetworking.git";
+			requirement = {
+				branch = spm;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA4B3B8325BBDD260013B3ED /* ASNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA4B3B8225BBDD260013B3ED /* XCRemoteSwiftPackageReference "ASNetworking" */;
+			productName = ASNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA4B3B3725BBD6200013B3ED /* Project object */;
 }

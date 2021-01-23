@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ASNetworking",
+        "repositoryURL": "git@github.com:skorulis/ASNetworking.git",
+        "state": {
+          "branch": "spm",
+          "revision": "03392ec4a3cbe56f80976ed87ee59ea53b2dc3fe",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
