@@ -7,10 +7,26 @@
 
 import SwiftUI
 
+class ContentViewModel: ObservableObject {
+    
+    @Published var query: String = ""
+    
+}
+
 struct ContentView: View {
+    
+    @ObservedObject private var viewModel: ContentViewModel
+    
+    init() {
+        self.viewModel = ContentViewModel()
+    }
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List  {
+            Section  {
+                SearchBar(text: $viewModel.query)
+            }
+        }
     }
 }
 
