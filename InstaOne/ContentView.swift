@@ -7,9 +7,12 @@
 
 import SwiftUI
 import Combine
+import SwiftRex
+import CombineRex
 
-class ContentViewModel: ObservableObject {
+class SearchViewModel: ObservableObject {
     
+    var projection: ObservableViewModel<ViewAction, ViewState>
     private let api = MainAPI()
     private var subscibers: Set<AnyCancellable> = []
     @Published var users: [InstaUser] = []
@@ -21,8 +24,36 @@ class ContentViewModel: ObservableObject {
                 print("Finished \(x)")
             } receiveValue: { (users) in
                 self.users = users
+                self.projection.dispatch(.gotUsers(users))
             }.store(in: &subscibers)
         }
+    }
+    
+    init(store: AppStore) {
+        self.projection = store.projection(action: SearchViewModel.transform(viewAction:), state: SearchViewModel.transform(appState:))
+            .asObservableViewModel(initialState: .empty, emitsValue: .always)
+    }
+    
+    struct ViewState {
+        let users: [InstaUser]
+        
+        static var empty: ViewState {
+            return ViewState(users: [])
+        }
+    }
+    
+    enum ViewAction {
+        case gotUsers([InstaUser])
+    }
+    
+    private static func transform(viewAction: ViewAction) -> AppAction? {
+        switch viewAction {
+        case .gotUsers(let users): return .storeUsers(user: users)
+        }
+    }
+    
+    private static func transform(appState: AppState) -> ViewState {
+        ViewState(users: appState.users)
     }
     
 }
@@ -46,10 +77,10 @@ struct UserRow: View {
 
 struct ContentView: View {
     
-    @ObservedObject private var viewModel: ContentViewModel
+    @ObservedObject private var viewModel: SearchViewModel
     
-    init() {
-        self.viewModel = ContentViewModel()
+    init(store: AppStore) {
+        self.viewModel = SearchViewModel(store: store)
     }
     
     var body: some View {
@@ -66,6 +97,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let store = AppStore()
+        
+        ContentView(store: store)
     }
 }

@@ -20,6 +20,8 @@
 		FA4B3B8925BBDD320013B3ED /* MainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B8825BBDD320013B3ED /* MainAPI.swift */; };
 		FA4B3B8E25BBE01B0013B3ED /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B8D25BBE01B0013B3ED /* Endpoints.swift */; };
 		FA4B3B9425BBE0690013B3ED /* InstaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B9325BBE0690013B3ED /* InstaUser.swift */; };
+		FA4B3B9A25BBE9F90013B3ED /* CombineRex in Frameworks */ = {isa = PBXBuildFile; productRef = FA4B3B9925BBE9F90013B3ED /* CombineRex */; };
+		FA4B3BA025BBEB170013B3ED /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B9F25BBEB170013B3ED /* AppStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,7 @@
 		FA4B3B8825BBDD320013B3ED /* MainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPI.swift; sourceTree = "<group>"; };
 		FA4B3B8D25BBE01B0013B3ED /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		FA4B3B9325BBE0690013B3ED /* InstaUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaUser.swift; sourceTree = "<group>"; };
+		FA4B3B9F25BBEB170013B3ED /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4B3B9A25BBE9F90013B3ED /* CombineRex in Frameworks */,
 				FA4B3B8425BBDD260013B3ED /* ASNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +113,7 @@
 		FA4B3B4125BBD6200013B3ED /* InstaOne */ = {
 			isa = PBXGroup;
 			children = (
+				FA4B3B9E25BBEA4F0013B3ED /* store */,
 				FA4B3B9225BBE05D0013B3ED /* model */,
 				FA4B3B8125BBD90E0013B3ED /* api */,
 				FA4B3B7825BBD79D0013B3ED /* Components */,
@@ -174,6 +179,14 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		FA4B3B9E25BBEA4F0013B3ED /* store */ = {
+			isa = PBXGroup;
+			children = (
+				FA4B3B9F25BBEB170013B3ED /* AppStore.swift */,
+			);
+			path = store;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,6 +205,7 @@
 			name = InstaOne;
 			packageProductDependencies = (
 				FA4B3B8325BBDD260013B3ED /* ASNetworking */,
+				FA4B3B9925BBE9F90013B3ED /* CombineRex */,
 			);
 			productName = InstaOne;
 			productReference = FA4B3B3F25BBD6200013B3ED /* InstaOne.app */;
@@ -266,6 +280,7 @@
 			mainGroup = FA4B3B3625BBD6200013B3ED;
 			packageReferences = (
 				FA4B3B8225BBDD260013B3ED /* XCRemoteSwiftPackageReference "ASNetworking" */,
+				FA4B3B9825BBE9F90013B3ED /* XCRemoteSwiftPackageReference "SwiftRex" */,
 			);
 			productRefGroup = FA4B3B4025BBD6200013B3ED /* Products */;
 			projectDirPath = "";
@@ -317,6 +332,7 @@
 				FA4B3B8925BBDD320013B3ED /* MainAPI.swift in Sources */,
 				FA4B3B8E25BBE01B0013B3ED /* Endpoints.swift in Sources */,
 				FA4B3B4725BBD6200013B3ED /* ContentView.swift in Sources */,
+				FA4B3BA025BBEB170013B3ED /* AppStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +671,14 @@
 				kind = branch;
 			};
 		};
+		FA4B3B9825BBE9F90013B3ED /* XCRemoteSwiftPackageReference "SwiftRex" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:SwiftRex/SwiftRex.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -662,6 +686,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA4B3B8225BBDD260013B3ED /* XCRemoteSwiftPackageReference "ASNetworking" */;
 			productName = ASNetworking;
+		};
+		FA4B3B9925BBE9F90013B3ED /* CombineRex */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA4B3B9825BBE9F90013B3ED /* XCRemoteSwiftPackageReference "SwiftRex" */;
+			productName = CombineRex;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
