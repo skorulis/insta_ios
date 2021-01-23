@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 import SwiftRex
 import CombineRex
+import ComposableArchitecture
 
 class SearchViewModel: ObservableObject {
     

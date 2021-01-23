@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "combine-schedulers",
+        "repositoryURL": "https://github.com/pointfreeco/combine-schedulers",
+        "state": {
+          "branch": null,
+          "revision": "ff42ec9061d864de7982162011321d3df5080c10",
+          "version": "0.1.2"
+        }
+      },
+      {
         "package": "ReactiveSwift",
         "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveSwift.git",
         "state": {
@@ -26,6 +35,24 @@
           "branch": null,
           "revision": "c8742ed97fc2f0c015a5ea5eddefb064cd7532d2",
           "version": "6.0.0"
+        }
+      },
+      {
+        "package": "swift-case-paths",
+        "repositoryURL": "https://github.com/pointfreeco/swift-case-paths",
+        "state": {
+          "branch": null,
+          "revision": "ed1838ab4fa5d47db8aa640736dd5b7672548873",
+          "version": "0.1.2"
+        }
+      },
+      {
+        "package": "swift-composable-architecture",
+        "repositoryURL": "git@github.com:pointfreeco/swift-composable-architecture.git",
+        "state": {
+          "branch": null,
+          "revision": "37c6312ba43ec697063abe5956908db6b71aa68a",
+          "version": "0.11.0"
         }
       },
       {

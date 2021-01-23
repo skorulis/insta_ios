@@ -22,6 +22,8 @@
 		FA4B3B9425BBE0690013B3ED /* InstaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B9325BBE0690013B3ED /* InstaUser.swift */; };
 		FA4B3B9A25BBE9F90013B3ED /* CombineRex in Frameworks */ = {isa = PBXBuildFile; productRef = FA4B3B9925BBE9F90013B3ED /* CombineRex */; };
 		FA4B3BA025BBEB170013B3ED /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B9F25BBEB170013B3ED /* AppStore.swift */; };
+		FA4B3BA625BC09310013B3ED /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = FA4B3BA525BC09310013B3ED /* ComposableArchitecture */; };
+		FA4B3BAB25BC0BDE0013B3ED /* AppStoreComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3BAA25BC0BDE0013B3ED /* AppStoreComp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 		FA4B3B8D25BBE01B0013B3ED /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		FA4B3B9325BBE0690013B3ED /* InstaUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaUser.swift; sourceTree = "<group>"; };
 		FA4B3B9F25BBEB170013B3ED /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		FA4B3BAA25BC0BDE0013B3ED /* AppStoreComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreComp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 			files = (
 				FA4B3B9A25BBE9F90013B3ED /* CombineRex in Frameworks */,
 				FA4B3B8425BBDD260013B3ED /* ASNetworking in Frameworks */,
+				FA4B3BA625BC09310013B3ED /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				FA4B3B9F25BBEB170013B3ED /* AppStore.swift */,
+				FA4B3BAA25BC0BDE0013B3ED /* AppStoreComp.swift */,
 			);
 			path = store;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			packageProductDependencies = (
 				FA4B3B8325BBDD260013B3ED /* ASNetworking */,
 				FA4B3B9925BBE9F90013B3ED /* CombineRex */,
+				FA4B3BA525BC09310013B3ED /* ComposableArchitecture */,
 			);
 			productName = InstaOne;
 			productReference = FA4B3B3F25BBD6200013B3ED /* InstaOne.app */;
@@ -281,6 +287,7 @@
 			packageReferences = (
 				FA4B3B8225BBDD260013B3ED /* XCRemoteSwiftPackageReference "ASNetworking" */,
 				FA4B3B9825BBE9F90013B3ED /* XCRemoteSwiftPackageReference "SwiftRex" */,
+				FA4B3BA425BC09310013B3ED /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = FA4B3B4025BBD6200013B3ED /* Products */;
 			projectDirPath = "";
@@ -325,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4B3BAB25BC0BDE0013B3ED /* AppStoreComp.swift in Sources */,
 				FA4B3B9425BBE0690013B3ED /* InstaUser.swift in Sources */,
 				FA4B3B4325BBD6200013B3ED /* AppDelegate.swift in Sources */,
 				FA4B3B7A25BBD7A60013B3ED /* SearchBar.swift in Sources */,
@@ -679,6 +687,14 @@
 				minimumVersion = 0.8.2;
 			};
 		};
+		FA4B3BA425BC09310013B3ED /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -691,6 +707,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA4B3B9825BBE9F90013B3ED /* XCRemoteSwiftPackageReference "SwiftRex" */;
 			productName = CombineRex;
+		};
+		FA4B3BA525BC09310013B3ED /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA4B3BA425BC09310013B3ED /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
