@@ -12,7 +12,7 @@ struct AppEnvironment {
     var mainQueue: AnySchedulerOf<DispatchQueue>
 }
 
-struct StoreHelpers {
+/*struct StoreHelpers {
     
     static var appReducer: Reducer<AppState, AppAction, AppEnvironment> {
         Reducer<AppState, AppAction, AppEnvironment> {
@@ -31,4 +31,4 @@ struct StoreHelpers {
         return store
     }
     
-}
+}*/

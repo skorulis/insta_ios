@@ -19,12 +19,7 @@ class SearchViewModel: ObservableObject {
     
     @Published var query: String = "" {
         didSet {
-            let req = Endpoints.search(query: query)
-            api.execute(req).sink { x in
-                print("Finished \(x)")
-            } receiveValue: { (users) in
-                self.projection.dispatch(.gotUsers(users))
-            }.store(in: &subscibers)
+            self.projection.dispatch(.search(query))
         }
     }
     
@@ -42,12 +37,12 @@ class SearchViewModel: ObservableObject {
     }
     
     enum ViewAction {
-        case gotUsers([InstaUser])
+        case search(String)
     }
     
     private static func transform(viewAction: ViewAction) -> AppAction? {
         switch viewAction {
-        case .gotUsers(let users): return .storeUsers(user: users)
+        case .search(let query): return .getUsers(query)
         }
     }
     
