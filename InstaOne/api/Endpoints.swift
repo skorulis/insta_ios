@@ -10,7 +10,7 @@ import Foundation
 
 struct Endpoints {
     
-    static func search(query: String) -> JSONAPIRequest<EmptyRequestModel, [InstaUser]> {
+    static func search(query: String) -> JSONAPIRequest<EmptyRequestModel, [UserDetails]> {
         let queryParam = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
         let path = "search?username=\(queryParam)"
         return JSONAPIRequest(path: path, body: EmptyRequestModel())

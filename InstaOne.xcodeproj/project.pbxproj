@@ -24,6 +24,9 @@
 		FA4B3BA025BBEB170013B3ED /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3B9F25BBEB170013B3ED /* AppStore.swift */; };
 		FA4B3BA625BC09310013B3ED /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = FA4B3BA525BC09310013B3ED /* ComposableArchitecture */; };
 		FA4B3BAB25BC0BDE0013B3ED /* AppStoreComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3BAA25BC0BDE0013B3ED /* AppStoreComp.swift */; };
+		FA4B3BB125BD701A0013B3ED /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3BB025BD701A0013B3ED /* UserSearchView.swift */; };
+		FA4B3BB925BD70840013B3ED /* UserRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3BB825BD70840013B3ED /* UserRow.swift */; };
+		FA4B3BBE25BD716B0013B3ED /* BadFollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3BBD25BD716B0013B3ED /* BadFollowingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		FA4B3B9325BBE0690013B3ED /* InstaUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaUser.swift; sourceTree = "<group>"; };
 		FA4B3B9F25BBEB170013B3ED /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		FA4B3BAA25BC0BDE0013B3ED /* AppStoreComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreComp.swift; sourceTree = "<group>"; };
+		FA4B3BB025BD701A0013B3ED /* UserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchView.swift; sourceTree = "<group>"; };
+		FA4B3BB825BD70840013B3ED /* UserRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRow.swift; sourceTree = "<group>"; };
+		FA4B3BBD25BD716B0013B3ED /* BadFollowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadFollowingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 		FA4B3B4125BBD6200013B3ED /* InstaOne */ = {
 			isa = PBXGroup;
 			children = (
+				FA4B3BAF25BD70070013B3ED /* view */,
 				FA4B3B9E25BBEA4F0013B3ED /* store */,
 				FA4B3B9225BBE05D0013B3ED /* model */,
 				FA4B3B8125BBD90E0013B3ED /* api */,
@@ -162,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				FA4B3B7925BBD7A60013B3ED /* SearchBar.swift */,
+				FA4B3BB825BD70840013B3ED /* UserRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -190,6 +198,15 @@
 				FA4B3BAA25BC0BDE0013B3ED /* AppStoreComp.swift */,
 			);
 			path = store;
+			sourceTree = "<group>";
+		};
+		FA4B3BAF25BD70070013B3ED /* view */ = {
+			isa = PBXGroup;
+			children = (
+				FA4B3BB025BD701A0013B3ED /* UserSearchView.swift */,
+				FA4B3BBD25BD716B0013B3ED /* BadFollowingView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,14 +349,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4B3BBE25BD716B0013B3ED /* BadFollowingView.swift in Sources */,
 				FA4B3BAB25BC0BDE0013B3ED /* AppStoreComp.swift in Sources */,
 				FA4B3B9425BBE0690013B3ED /* InstaUser.swift in Sources */,
 				FA4B3B4325BBD6200013B3ED /* AppDelegate.swift in Sources */,
+				FA4B3BB125BD701A0013B3ED /* UserSearchView.swift in Sources */,
 				FA4B3B7A25BBD7A60013B3ED /* SearchBar.swift in Sources */,
 				FA4B3B4525BBD6200013B3ED /* SceneDelegate.swift in Sources */,
 				FA4B3B8925BBDD320013B3ED /* MainAPI.swift in Sources */,
 				FA4B3B8E25BBE01B0013B3ED /* Endpoints.swift in Sources */,
 				FA4B3B4725BBD6200013B3ED /* ContentView.swift in Sources */,
+				FA4B3BB925BD70840013B3ED /* UserRow.swift in Sources */,
 				FA4B3BA025BBEB170013B3ED /* AppStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

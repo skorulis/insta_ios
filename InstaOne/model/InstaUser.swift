@@ -7,21 +7,24 @@
 
 import Foundation
 
+struct UserDetails: Decodable, Identifiable {
+    let user: InstaUser
+    let isFollowing: Bool
+    let isFollower: Bool
+    let likeCount: Int
+    
+    var id: String {
+        return user.username
+    }
+}
+
 struct InstaUser: Decodable, Identifiable {
     
     let username: String
-    let posts: Int?
-    let followers: Int?
-    let following: Int?
-    let liked: String
+    let postCount: Int?
+    let followerCount: Int?
+    let followingCount: Int?
     
-    enum CodingKeys: String, CodingKey  {
-        case username = "user_username"
-        case posts = "user_posts"
-        case followers = "user_followers"
-        case following = "user_following"
-        case liked = "count"
-    }
     
     var id: String {
         return username

@@ -11,11 +11,11 @@ import SwiftRex
 import Combine
 
 struct AppState {
-    var users: [InstaUser] = []
+    var users: [UserDetails] = []
 }
 
 enum AppAction {
-    case storeUsers(user: [InstaUser])
+    case storeUsers(user: [UserDetails])
     case getUsers(String)
     case gotError(Error)
 }
